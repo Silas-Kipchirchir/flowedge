@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlowEdge Industrial Solution Ltd</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* ===== Global Styles ===== */
+*{margin:0;padding:0;box-sizing:border-box;}
+body,html{font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;scroll-behavior:smooth;background:#f0f2f5;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+img{max-width:100%;display:block;border-radius:10px;}
+button{cursor:pointer;}
+
+/* ===== Navbar ===== */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  left:0;
+  background:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 50px;
+  z-index:1000;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+nav img{height:60px;}
+nav ul{
+  display:flex;
+  gap:25px;
+}
+nav ul li{
+  color:#203a43;
+  font-weight:bold;
+  cursor:pointer;
+  position:relative;
+  transition:0.4s;
+}
+nav ul li::after{
+  content:'';position:absolute;width:0;height:3px;background:#ffdd00;bottom:-5px;left:0;transition:0.4s;
+}
+nav ul li:hover::after{width:100%;}
+nav ul li:hover{color:#ffdd00;}
+.menu-toggle{
+  display:none;
+  font-size:1.8rem;
+  color:#203a43;
+  cursor:pointer;
+}
+
+/* ===== Hero Section ===== */
+.hero{
+  height:100vh;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+  overflow:hidden;
+  background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+             url('https://images.unsplash.com/photo-1556761175-4b46a572b786?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600') center/cover no-repeat;
+  background-attachment: fixed;
+}
+.hero h1{
+  font-size:4rem;
+  margin-bottom:20px;
+  animation:fadeInTop 2s ease forwards;
+  opacity:0;
+}
+.hero p{
+  font-size:1.5rem;
+  margin-bottom:30px;
+  animation:fadeInTop 2.5s ease forwards;
+  opacity:0;
+}
+.hero button{
+  padding:15px 50px;
+  font-size:1.2rem;
+  background:#ffdd00;
+  border:none;
+  border-radius:50px;
+  font-weight:bold;
+  color:#203a43;
+  transition:0.4s;
+  animation:fadeInTop 3s ease forwards;
+  opacity:0;
+}
+.hero button:hover{
+  background:#ffaa00;
+  transform:scale(1.1);
+}
+.hero .float-icons i{
+  position:absolute;
+  color:rgba(255,255,255,0.3);
+  font-size:2.5rem;
+  animation:float 10s infinite linear;
+}
+.hero .float-icons i:nth-child(1){top:10%;left:15%; animation-delay:0s;}
+.hero .float-icons i:nth-child(2){top:25%;left:70%; animation-delay:2s;}
+.hero .float-icons i:nth-child(3){top:60%;left:40%; animation-delay:4s;}
+.hero .float-icons i:nth-child(4){top:80%;left:85%; animation-delay:6s;}
+
+/* ===== Animations ===== */
+@keyframes float{
+  0%{transform:translateY(0px);}
+  50%{transform:translateY(-25px);}
+  100%{transform:translateY(0px);}
+}
+@keyframes fadeInTop{
+  0%{opacity:0; transform:translateY(-50px);}
+  100%{opacity:1; transform:translateY(0);}
+}
+
+/* ===== Sections ===== */
+section{
+  padding:120px 50px;
+  position:relative;
+  border-radius:15px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+section h2{
+  text-align:center;
+  font-size:2.8rem;
+  margin-bottom:60px;
+  color:#fff;
+  position:relative;
+}
+section h2::after{
+  content:''; width:120px; height:4px; background:#ffdd00; display:block; margin:15px auto 0; border-radius:5px;
+}
+
+/* ===== About Section ===== */
+.about{
+  background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+             url('https://images.unsplash.com/photo-1581091012184-7eec8aa9989d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=1200') center/cover no-repeat;
+  color:white;
+  text-align:center;
+  padding:80px 50px;
+  max-width:1000px;
+  margin:0 auto 80px auto;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  transform:translateY(50px);
+  opacity:0;
+  transition:1s;
+}
+.about.show{opacity:1; transform:translateY(0);}
+.about img{
+  margin-top:30px;
+  width:300px;
+  border-radius:15px;
+}
+
+/* ===== Services Section ===== */
+.services{
+  max-width:1200px;
+  margin:0 auto 80px auto;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('https://images.unsplash.com/photo-1569025697916-1f54a5ec1a7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=1200') center/cover no-repeat;
+}
+.services-container{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap:30px;
+  justify-items:center;
+  align-items:start;
+  padding:0 20px;
+}
+.service-card{
+  background:linear-gradient(135deg,#1e3c72,#2a5298);
+  color:white;
+  width:100%;
+  max-width:320px;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  transition:0.5s;
+  transform:translateY(50px);
+  opacity:0;
+}
+.service-card.show{opacity:1; transform:translateY(0);}
+.service-card:hover{
+  transform:translateY(-15px) scale(1.05);
+  box-shadow:0 20px 50px rgba(0,0,0,0.7);
+  background:linear-gradient(135deg,#2a5298,#1e3c72);
+}
+.service-card img{
+  width:140px;
+  height:140px;
+  margin-bottom:20px;
+  border-radius:15px;
+  object-fit:cover;
+  transition:0.4s;
+}
+.service-card img:hover{transform:scale(1.1);}
+.service-card h3{font-size:1.5rem;margin-bottom:15px;font-weight:bold;}
+.service-card p{font-size:1rem;line-height:1.5;}
+
+/* ===== Industries Section ===== */
+.industries{
+  background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+             url('https://images.unsplash.com/photo-1581091215363-dacdf3f021a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=1200') center/cover no-repeat;
+  color:white;
+  text-align:center;
+  padding:80px 50px;
+  max-width:900px;
+  margin:0 auto 80px auto;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  transform:translateY(50px);
+  opacity:0;
+  transition:1s;
+}
+.industries.show{opacity:1; transform:translateY(0);}
+.industries ul li{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:15px;
+  font-size:1.3rem;
+  margin:20px 0;
+  color:#ffdd00;
+  transition:0.5s;
+}
+.industries ul li i{
+  font-size:2rem;
+  transition:0.5s;
+}
+.industries ul li:hover i{
+  transform:rotate(360deg) scale(1.5);
+  color:#ffaa00;
+}
+
+/* ===== Contact Section ===== */
+.contact{
+  padding:100px 50px;
+  text-align:center;
+  background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+             url('https://images.unsplash.com/photo-1581091012184-7eec8aa9989d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=1200') center/cover no-repeat;
+  color:white;
+  max-width:1000px;
+  margin:0 auto 80px auto;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  transform:translateY(50px);
+  opacity:0;
+  transition:1s;
+}
+.contact.show{opacity:1; transform:translateY(0);}
+.contact form{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+.contact input, .contact textarea{
+  padding:15px;
+  border-radius:10px;
+  border:none;
+  font-size:1rem;
+  transition:0.4s;
+}
+.contact input:focus, .contact textarea:focus{
+  outline:none;
+  box-shadow:0 0 10px #ffdd00;
+}
+.contact button{
+  padding:15px;
+  border:none;
+  border-radius:50px;
+  background:#ffdd00;
+  font-weight:bold;
+  font-size:1.1rem;
+  cursor:pointer;
+  transition:0.3s;
+}
+.contact button:hover{
+  background:#ffaa00;
+  transform:scale(1.05);
+}
+
+/* ===== Map Section ===== */
+.map{
+  width:100%;
+  height:400px;
+  margin-top:50px;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* ===== Footer ===== */
+footer{
+  background:#203a43;
+  color:white;
+  text-align:center;
+  padding:30px;
+  font-size:0.9rem;
+}
+footer a{color:#ffdd00;}
+footer a:hover{color:white;}
+
+/* ===== Responsive ===== */
+@media(max-width:768px){
+  nav ul{position:fixed;top:0;right:-100%;width:60%;height:100vh;background:white;flex-direction:column;align-items:center;justify-content:center;gap:30px;transition:0.5s;z-index:999;}
+  nav ul.active{right:0;}
+  .menu-toggle{display:block;}
+  .services-container{grid-template-columns:1fr;}
+  .industries ul{flex-direction:column;gap:20px;}
+  section{padding:80px 30px;}
+  .hero h1{font-size:2.5rem;}
+  .hero p{font-size:1.2rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <img src="https://images.unsplash.com/photo-1596079898825-72f0d168d9d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=150" alt="FlowEdge Logo">
+  <i class="fa fa-bars menu-toggle"></i>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#industries">Industries</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <h1>FlowEdge Industrial Solution Ltd</h1>
+  <p>Reliable Industrial Flow-Control and Process Equipment Solutions in Kenya</p>
+  <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Us</button>
+  <div class="float-icons">
+    <i class="fa-solid fa-cogs"></i>
+    <i class="fa-solid fa-industry"></i>
+    <i class="fa-solid fa-water"></i>
+    <i class="fa-solid fa-bolt"></i>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+  <h2>Who We Are</h2>
+  <p>FlowEdge Industrial Solution Ltd is a Kenya-registered, founder-led industrial company providing sourcing, supply, and local representation support for industrial flow-control and process equipment. Our focus is on technical alignment, responsive communication, and reliable coordination to deliver projects efficiently and reliably. We build long-term partnerships tailored to local market needs.</p>
+  <img src="https://images.unsplash.com/photo-1593642634367-d91a135587b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=400" alt="About FlowEdge">
+</section>
+
+<!-- Services Section -->
+<section class="services" id="services">
+  <h2>Our Services</h2>
+  <div class="services-container">
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1581091012184-7eec8aa9989d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=400" alt="Sourcing Equipment">
+      <h3>Sourcing Equipment</h3>
+      <p>High-quality industrial flow-control and process equipment sourced from trusted manufacturers worldwide.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1562072541-4ef31d3e6c5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=400" alt="Local Support">
+      <h3>Local Support</h3>
+      <p>We provide local representation, installation, and client support ensuring smooth project execution.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1593642634367-d91a135587b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=400" alt="Project Coordination">
+      <h3>Project Coordination</h3>
+      <p>Technical alignment, responsive communication, and reliable coordination for efficient industrial projects.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1581091215363-dacdf3f021a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=400" alt="Equipment Installation">
+      <h3>Equipment Installation</h3>
+      <p>Professional installation of industrial equipment, ensuring safety, precision, and optimal performance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Industries Section -->
+<section class="industries" id="industries">
+  <h2>Industries We Serve</h2>
+  <ul>
+    <li><i class="fa-solid fa-water"></i> Water and Wastewater Treatment</li>
+    <li><i class="fa-solid fa-industry"></i> Manufacturing and Processing Plants</li>
+    <li><i class="fa-solid fa-bolt"></i> Energy and Utilities</li>
+    <li><i class="fa-solid fa-cogs"></i> General Industrial Facilities</li>
+  </ul>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <input type="text" placeholder="Subject" required>
+    <textarea placeholder="Message" rows="6" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.041236623074!2d36.816657!3d-1.292066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10c2f9a2e071%3A0x41d5bcd0aa3f23c7!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 FlowEdge Industrial Solution Ltd. All rights reserved. | <a href="#">Privacy Policy</a></p>
+</footer>
+
+<script>
+// Navbar toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navUl = document.querySelector('nav ul');
+menuToggle.addEventListener('click', () => { navUl.classList.toggle('active'); });
+
+// Scroll animations
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+},{threshold:0.2});
+
+document.querySelectorAll('.about, .service-card, .industries, .contact').forEach(el=>{
+  observer.observe(el);
+});
+
+// Parallax background on scroll
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('section').forEach(sec => {
+    let speed = 0.3;
+    sec.style.backgroundPositionY = -(window.scrollY * speed) + 'px';
+  });
+});
+</script>
+
+</body>
+</html>
