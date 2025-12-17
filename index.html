@@ -353,7 +353,7 @@ footer a:hover{color:white;}
 
 <!-- Navbar -->
 <nav>
-  <img src="images/logo.png" alt="FlowEdge Logo">
+  <img src="logo.png" alt="FlowEdge Logo">
   <i class="fa fa-bars menu-toggle"></i>
   <ul>
     <li><a href="#home">Home</a></li>
@@ -904,7 +904,20 @@ window.addEventListener('scroll', () => {
 });
 </script>
 
+<script>
+  const navLinks = document.querySelectorAll('nav ul li a');
+  const navMenu = document.querySelector('nav ul');
+  const menuToggleBtn = document.querySelector('.menu-toggle');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+      menuToggleBtn.classList.remove('active');
+    });
+  });
+</script>
 
 
 </body>
 </html>
+
