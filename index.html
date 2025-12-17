@@ -304,6 +304,35 @@ footer{
 footer a{color:#ffdd00;}
 footer a:hover{color:white;}
 
+/* ===== WhatsApp Floating Button ===== */
+.whatsapp-chat{
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  background:#25D366;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  cursor:pointer;
+  z-index:10000;
+  animation: pulse 2s infinite;
+  transition:0.3s;
+}
+.whatsapp-chat:hover{transform:scale(1.2);}
+.whatsapp-chat i{
+  color:white;
+  font-size:2rem;
+}
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.1);}
+  100%{transform:scale(1);}
+}
+
 /* ===== Responsive ===== */
 @media(max-width:768px){
   nav ul{position:fixed;top:0;right:-100%;width:60%;height:100vh;background:white;flex-direction:column;align-items:center;justify-content:center;gap:30px;transition:0.5s;z-index:999;}
@@ -321,7 +350,7 @@ footer a:hover{color:white;}
 
 <!-- Navbar -->
 <nav>
-  <img src="logo.png" alt="FlowEdge Logo">
+  <img src="images/logo.png" alt="FlowEdge Logo">
   <i class="fa fa-bars menu-toggle"></i>
   <ul>
     <li><a href="#home">Home</a></li>
@@ -346,49 +375,263 @@ footer a:hover{color:white;}
 </section>
 
 <!-- About Section -->
-<section class="about" id="about">
-  <h2>Who We Are</h2>
-  <p>FlowEdge Industrial Solution Ltd is a Kenya-registered, founder-led industrial company providing sourcing, supply, and local representation support for industrial flow-control and process equipment. Our focus is on technical alignment, responsive communication, and reliable coordination to deliver projects efficiently and reliably. We build long-term partnerships tailored to local market needs.</p>
-  <img src="https://images.unsplash.com/photo-1593642634367-d91a135587b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=400" alt="About FlowEdge">
+<section class="about" id="about" style="padding:80px 20px; background:#f0f4f8; text-align:center; position:relative; overflow:hidden;">
+    <!-- Floating background shapes -->
+    <div style="position:absolute; width:180px; height:180px; background:linear-gradient(135deg,#c2e9fb,#a1c4fd); border-radius:50%; top:-40px; left:-40px; animation:float 7s ease-in-out infinite;"></div>
+    <div style="position:absolute; width:120px; height:120px; background:linear-gradient(135deg,#fdd6a8,#fbc2eb); border-radius:50%; bottom:-40px; right:-30px; animation:float 6s ease-in-out infinite reverse;"></div>
+
+    <h2 style="font-size:36px; color:#0077ff; margin-bottom:30px; position:relative; display:inline-block; animation:fadeInUp 1s ease forwards;">
+        Who We Are
+    </h2>
+
+    <p style="max-width:800px; margin:0 auto 50px; font-size:18px; line-height:1.8; color:#333; animation:fadeIn 1.5s ease forwards;">
+        FlowEdge Industrial Solution Ltd is a Kenya-registered, founder-led industrial company providing sourcing, supply, and local representation support for industrial flow-control and process equipment. Our focus is on technical alignment, responsive communication, and reliable coordination to deliver projects efficiently and reliably. We build long-term partnerships tailored to local market needs.
+    </p>
+
+    <!-- About Image with Gradient Overlay -->
+    <div style="max-width:700px; margin:0 auto; border-radius:15px; overflow:hidden; box-shadow:0 8px 30px rgba(0,0,0,0.2); transition:transform 0.3s, box-shadow 0.3s; animation:fadeIn 2s ease forwards; position:relative;">
+        <img src="https://images.unsplash.com/photo-1593642634367-d91a135587b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=800" alt="About FlowEdge" style="width:100%; height:auto; display:block;">
+        <!-- Gradient overlay -->
+        <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(to bottom, rgba(0,119,255,0.2), rgba(255,255,255,0.0)); pointer-events:none;"></div>
+    </div>
 </section>
 
-<!-- Services Section -->
-<section class="services" id="services">
-  <h2>Our Services</h2>
-  <div class="services-container">
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1581091012184-7eec8aa9989d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=400" alt="Sourcing Equipment">
-      <h3>Sourcing Equipment</h3>
-      <p>High-quality industrial flow-control and process equipment sourced from trusted manufacturers worldwide.</p>
+<!-- Animations -->
+<style>
+@keyframes fadeInUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Floating background animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    50% { transform: translateY(20px) translateX(20px); }
+}
+
+/* Image hover effect */
+section.about div:hover img {
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+}
+
+/* Responsive */
+@media(max-width:1024px){
+    h2{
+        font-size:32px;
+    }
+    p{
+        font-size:17px;
+    }
+}
+
+@media(max-width:768px){
+    h2{
+        font-size:28px;
+    }
+    p{
+        font-size:16px;
+    }
+}
+</style>
+
+
+<section class="section" id="services" style="padding:80px 20px; background:#f0f4f8; position:relative; overflow:hidden; text-align:center;">
+    <!-- Animated background shapes -->
+    <div style="position:absolute; width:200px; height:200px; background:linear-gradient(135deg,#a8edea,#fed6e3); border-radius:50%; top:-50px; left:-50px; animation:float 6s ease-in-out infinite;"></div>
+    <div style="position:absolute; width:150px; height:150px; background:linear-gradient(135deg,#fdd6a8,#fbc2eb); border-radius:50%; bottom:-50px; right:-30px; animation:float 8s ease-in-out infinite reverse;"></div>
+
+    <h2 style="font-size:36px; color:#0077ff; margin-bottom:50px; position:relative; display:inline-block; animation:fadeInUp 1s ease forwards;">
+        Our Services
+    </h2>
+
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; animation:fadeIn 1.5s ease forwards;">
+        <!-- What We Do Card -->
+        <div style="background: linear-gradient(135deg, #a8edea, #fed6e3); border-radius:12px; padding:30px; flex:1 1 300px; max-width:350px; box-shadow:0 4px 20px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; position:relative; z-index:1;">
+            <i class="fas fa-cogs" style="font-size:36px; color:#0077ff; margin-bottom:15px;"></i>
+            <h3 style="color:#0077ff; margin-bottom:15px;">What We Do</h3>
+            <p style="font-size:16px; line-height:1.6; color:#333;">
+                We support industrial clients by coordinating the sourcing and supply of flow-control and process equipment, and by acting as a local interface between international manufacturers and end users.
+            </p>
+        </div>
+
+        <!-- How We Work Card -->
+        <div style="background: linear-gradient(135deg, #fdd6a8, #fbc2eb); border-radius:12px; padding:30px; flex:1 1 300px; max-width:350px; box-shadow:0 4px 20px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; position:relative; z-index:1;">
+            <i class="fas fa-project-diagram" style="font-size:36px; color:#0077ff; margin-bottom:15px;"></i>
+            <h3 style="color:#0077ff; margin-bottom:15px;">How We Work</h3>
+            <p style="font-size:16px; line-height:1.6; color:#333;">
+                We operate with a lean structure, focusing on technical alignment, responsive communication, and reliable coordination to support efficient project execution.
+            </p>
+        </div>
+
+        <!-- Our Focus Card -->
+        <div style="background: linear-gradient(135deg, #a1c4fd, #c2e9fb); border-radius:12px; padding:30px; flex:1 1 300px; max-width:350px; box-shadow:0 4px 20px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; position:relative; z-index:1;">
+            <i class="fas fa-handshake" style="font-size:36px; color:#0077ff; margin-bottom:15px;"></i>
+            <h3 style="color:#0077ff; margin-bottom:15px;">Our Focus</h3>
+            <p style="font-size:16px; line-height:1.6; color:#333;">
+                To build long-term partnerships by providing dependable industrial sourcing and representation services tailored to local market needs.
+            </p>
+        </div>
     </div>
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1562072541-4ef31d3e6c5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=400" alt="Local Support">
-      <h3>Local Support</h3>
-      <p>We provide local representation, installation, and client support ensuring smooth project execution.</p>
+</section>
+
+<!-- Animations -->
+<style>
+@keyframes fadeInUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Card hover effect */
+section#services div[style*="border-radius"]:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+}
+
+/* Floating background animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    50% { transform: translateY(20px) translateX(20px); }
+}
+
+/* Responsive */
+@media(max-width:1024px){
+    section#services div[style*="border-radius"]{
+        flex:1 1 45%;
+    }
+}
+
+@media(max-width:768px){
+    section#services div[style*="border-radius"]{
+        flex:1 1 90%;
+    }
+    h2{
+        font-size:28px;
+    }
+}
+</style>
+
+<!-- Font Awesome CDN -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- Industries Section -->
+<section class="industries" id="industries" style="padding:100px 50px; position:relative; overflow:hidden;">
+  <h2 style="color:#0077ff; text-align:center; margin-bottom:60px; font-size:3rem;">Industries We Serve</h2>
+
+  <!-- Floating glowing gears in background -->
+  <div class="gear large" style="top:10%; left:5%;"></div>
+  <div class="gear large" style="top:70%; left:80%; animation-duration:25s;"></div>
+  <div class="gear large" style="top:40%; left:50%; width:100px; height:100px; opacity:0.15;"></div>
+  <div class="gear small" style="top:20%; left:20%; opacity:0.12;"></div>
+  <div class="gear small" style="top:50%; left:10%; opacity:0.10;"></div>
+  <div class="gear small" style="top:80%; left:70%; opacity:0.11;"></div>
+  <div class="gear small" style="top:30%; left:85%; opacity:0.10;"></div>
+
+  <div class="industries-container" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:30px; max-width:1200px; margin:0 auto; position:relative; z-index:1;">
+
+    <!-- Industry Cards -->
+    <div class="industry-card" style="background:linear-gradient(135deg,#00c6ff,#0072ff); color:white; padding:30px; border-radius:20px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.3); position:relative; overflow:hidden;">
+      <!-- Inner rotating gear -->
+      <div class="card-gear" style="top:10px; right:10px;"></div>
+      <h3 style="font-size:1.5rem; margin-bottom:15px;">Water & Wastewater Treatment</h3>
+      <p>Solutions for water processing, treatment plants, and wastewater management.</p>
     </div>
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1593642634367-d91a135587b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=400" alt="Project Coordination">
-      <h3>Project Coordination</h3>
-      <p>Technical alignment, responsive communication, and reliable coordination for efficient industrial projects.</p>
+
+    <div class="industry-card" style="background:linear-gradient(135deg,#ff9a9e,#fecfef); color:white; padding:30px; border-radius:20px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.3); position:relative; overflow:hidden;">
+      <div class="card-gear" style="top:10px; right:10px;"></div>
+      <h3 style="font-size:1.5rem; margin-bottom:15px;">Manufacturing & Processing</h3>
+      <p>Supporting manufacturing and processing plants with essential flow-control equipment.</p>
     </div>
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1581091215363-dacdf3f021a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=400" alt="Equipment Installation">
-      <h3>Equipment Installation</h3>
-      <p>Professional installation of industrial equipment, ensuring safety, precision, and optimal performance.</p>
+
+    <div class="industry-card" style="background:linear-gradient(135deg,#f7971e,#ffd200); color:white; padding:30px; border-radius:20px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.3); position:relative; overflow:hidden;">
+      <div class="card-gear" style="top:10px; right:10px;"></div>
+      <h3 style="font-size:1.5rem; margin-bottom:15px;">Energy & Utilities</h3>
+      <p>Reliable solutions for energy, power generation, and utility sectors.</p>
     </div>
+
+    <div class="industry-card" style="background:linear-gradient(135deg,#43e97b,#38f9d7); color:white; padding:30px; border-radius:20px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.3); position:relative; overflow:hidden;">
+      <div class="card-gear" style="top:10px; right:10px;"></div>
+      <h3 style="font-size:1.5rem; margin-bottom:15px;">General Industrial Facilities</h3>
+      <p>Comprehensive support for various industrial facilities and equipment needs.</p>
+    </div>
+
   </div>
 </section>
 
-<!-- Industries Section -->
-<section class="industries" id="industries">
-  <h2>Industries We Serve</h2>
-  <ul>
-    <li><i class="fa-solid fa-water"></i> Water and Wastewater Treatment</li>
-    <li><i class="fa-solid fa-industry"></i> Manufacturing and Processing Plants</li>
-    <li><i class="fa-solid fa-bolt"></i> Energy and Utilities</li>
-    <li><i class="fa-solid fa-cogs"></i> General Industrial Facilities</li>
-  </ul>
-</section>
+<style>
+/* Floating background gears */
+.gear {
+  position:absolute;
+  width:80px;
+  height:80px;
+  background:url('https://img.icons8.com/ios-filled/100/0077ff/gear.png') no-repeat center/contain;
+  animation:spinFloat linear infinite, glowCycle 10s linear infinite;
+}
+.gear.large { opacity:0.2; }
+.gear.small { width:40px; height:40px; opacity:0.08; animation-duration:35s; }
+
+/* Spin & Float Animation */
+@keyframes spinFloat {
+  0% { transform: rotate(0deg) translateY(0px); }
+  25% { transform: rotate(90deg) translateY(-10px); }
+  50% { transform: rotate(180deg) translateY(0px); }
+  75% { transform: rotate(270deg) translateY(10px); }
+  100% { transform: rotate(360deg) translateY(0px); }
+}
+
+/* Glow Color Cycling */
+@keyframes glowCycle {
+  0% { filter: drop-shadow(0 0 10px #00c6ff) drop-shadow(0 0 20px #0072ff); }
+  25% { filter: drop-shadow(0 0 10px #ff9a9e) drop-shadow(0 0 20px #fecfef); }
+  50% { filter: drop-shadow(0 0 10px #f7971e) drop-shadow(0 0 20px #ffd200); }
+  75% { filter: drop-shadow(0 0 10px #43e97b) drop-shadow(0 0 20px #38f9d7); }
+  100% { filter: drop-shadow(0 0 10px #00c6ff) drop-shadow(0 0 20px #0072ff); }
+}
+
+/* Card gears */
+.card-gear {
+  position:absolute;
+  width:30px;
+  height:30px;
+  background:url('https://img.icons8.com/ios-filled/50/ffffff/gear.png') no-repeat center/contain;
+  animation:spin 5s linear infinite;
+  opacity:0.3;
+}
+
+/* Card hover effect */
+.industry-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* Card hover rotates the gear faster */
+.industry-card:hover .card-gear {
+  animation-duration:2s;
+}
+
+/* Spin animation for card gear */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .industries-container{
+    grid-template-columns:1fr;
+  }
+}
+</style>
 
 <!-- Contact Section -->
 <section class="contact" id="contact">
@@ -404,6 +647,52 @@ footer a:hover{color:white;}
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.041236623074!2d36.816657!3d-1.292066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10c2f9a2e071%3A0x41d5bcd0aa3f23c7!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
 </section>
+
+<!-- WhatsApp Floating Button -->
+<div class="whatsapp-chat" 
+     onclick="window.open('https://wa.me/254753088762?text=Hello,%20I%20would%20like%20to%20inquire%20about%20FlowEdge%20Industrial%20services','_blank')">
+  <i class="fab fa-whatsapp"></i>
+</div>
+
+<style>
+/* WhatsApp Floating Button */
+.whatsapp-chat{
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  background:#25D366;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  cursor:pointer;
+  z-index:10000;
+  animation: pulse 2s infinite;
+  transition: transform 0.3s;
+}
+
+.whatsapp-chat i{
+  color:white;
+  font-size:2rem;
+  transition: transform 0.5s;
+}
+
+/* Pulse animation */
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.1);}
+  100%{transform:scale(1);}
+}
+
+/* Hover spin animation */
+.whatsapp-chat:hover i{
+  transform: rotate(20deg) scale(1.2);
+}
+</style>
+
 
 <!-- Footer -->
 <footer>
@@ -440,5 +729,3 @@ window.addEventListener('scroll', () => {
 
 </body>
 </html>
-
-
