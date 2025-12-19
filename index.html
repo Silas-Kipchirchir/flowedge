@@ -399,7 +399,7 @@ footer a:hover{color:white;}
 
     <!-- About Image with Gradient Overlay -->
     <div style="max-width:700px; margin:0 auto; border-radius:15px; overflow:hidden; box-shadow:0 8px 30px rgba(0,0,0,0.2); transition:transform 0.3s, box-shadow 0.3s; animation:fadeIn 2s ease forwards; position:relative;">
-        <img src="ind.png" alt="About FlowEdge" style="width:100%; height:auto; display:block;">
+        <img src="boiler.png" alt="About FlowEdge" style="width:100%; height:auto; display:block;">
         <!-- Gradient overlay -->
         <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(to bottom, rgba(0,119,255,0.2), rgba(255,255,255,0.0)); pointer-events:none;"></div>
     </div>
@@ -811,6 +811,71 @@ section#services div[style*="border-radius"]:hover {
 <!-- Font Awesome CDN -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
+
+<section class="section" id="our-promise" style="padding:80px 20px; background:#f0f4f8; position:relative; overflow:hidden; text-align:center;">
+    <!-- Animated background shapes -->
+    <div style="position:absolute; width:200px; height:200px; background:linear-gradient(135deg,#a8edea,#fed6e3); border-radius:50%; top:-50px; left:-50px; animation:float 6s ease-in-out infinite;"></div>
+    <div style="position:absolute; width:150px; height:150px; background:linear-gradient(135deg,#fdd6a8,#fbc2eb); border-radius:50%; bottom:-50px; right:-30px; animation:float 8s ease-in-out infinite reverse;"></div>
+
+    <!-- Section Title -->
+    <h2 style="font-size:36px; color:#0077ff; margin-bottom:50px; position:relative; display:inline-block; animation:fadeInUp 1s ease forwards;">
+        Our Promise
+    </h2>
+
+    <!-- Cards -->
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; animation:fadeIn 1.5s ease forwards;">
+        <!-- Reliability Card -->
+        <div style="background: linear-gradient(135deg, #a8edea, #fed6e3); border-radius:12px; padding:30px; flex:1 1 300px; max-width:350px; box-shadow:0 4px 20px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; position:relative; z-index:1;">
+            <i class="fas fa-shield-alt" style="font-size:36px; color:#0077ff; margin-bottom:15px;"></i>
+            <h3 style="color:#0077ff; margin-bottom:15px;">Reliability</h3>
+            <p style="font-size:16px; line-height:1.6; color:#333;">
+                Equipment that performs consistently under pressure to ensure uninterrupted operations.
+            </p>
+        </div>
+
+        <!-- Support Card -->
+        <div style="background: linear-gradient(135deg, #fdd6a8, #fbc2eb); border-radius:12px; padding:30px; flex:1 1 300px; max-width:350px; box-shadow:0 4px 20px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; position:relative; z-index:1;">
+            <i class="fas fa-headset" style="font-size:36px; color:#0077ff; margin-bottom:15px;"></i>
+            <h3 style="color:#0077ff; margin-bottom:15px;">Support</h3>
+            <p style="font-size:16px; line-height:1.6; color:#333;">
+                Responsive assistance to help your operations run smoothly without interruptions.
+            </p>
+        </div>
+
+        <!-- Excellence Card -->
+        <div style="background: linear-gradient(135deg, #a1c4fd, #c2e9fb); border-radius:12px; padding:30px; flex:1 1 300px; max-width:350px; box-shadow:0 4px 20px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; position:relative; z-index:1;">
+            <i class="fas fa-award" style="font-size:36px; color:#0077ff; margin-bottom:15px;"></i>
+            <h3 style="color:#0077ff; margin-bottom:15px;">Excellence</h3>
+            <p style="font-size:16px; line-height:1.6; color:#333;">
+                Field-proven solutions backed by trusted manufacturers to guarantee top quality.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Animation keyframes -->
+<style>
+    @keyframes float {
+        0% { transform: translateY(0) translateX(0); }
+        100% { transform: translateY(20px) translateX(20px); }
+    }
+    @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(30px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    /* Hover effect for cards */
+    #our-promise div[style*="flex:1 1 300px"]:hover {
+        transform: translateY(-10px);
+        box-shadow:0 8px 30px rgba(0,0,0,0.15);
+    }
+</style>
+
+
+
 <!-- Industries Section -->
 <section class="industries" id="industries" style="padding:100px 50px; position:relative; overflow:hidden;">
   <h2 style="color:#0077ff; text-align:center; margin-bottom:60px; font-size:3rem;">Industries We Serve</h2>
@@ -1004,17 +1069,81 @@ section#services div[style*="border-radius"]:hover {
     We'd love to hear from you! Reach out via email, phone, or follow us on social media.
   </p>
 
-  <!-- Contact Info with Icons -->
-  <div class="contact-info" style="margin-bottom: 40px; font-size: 1.2em; color: #004d40; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; position: relative; z-index: 1;">
-    <div class="contact-item">
-      <i class="fas fa-envelope contact-icon"></i>
-      <a href="mailto:info@flowedge.com" style="color:#00796b; text-decoration:none; margin-left:10px;">ronosilas2@gmail.com</a>
+ <!-- Contact Info -->
+<div style="
+  margin:60px auto 40px;
+  text-align:center;
+  position:relative;
+  z-index:1;
+">
+
+  <!-- Company Name & Location -->
+  <p style="
+    font-size:20px;
+    font-weight:600;
+    color:#004aad;
+    margin-bottom:25px;
+  ">
+    FlowEdge Industrial Solution Ltd<br>
+    <span style="font-size:16px; font-weight:400; color:#555;">
+      Nairobi, Kenya
+    </span>
+  </p>
+
+  <!-- Contact Items -->
+  <div style="
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    font-size:17px;
+  ">
+
+    <!-- Email -->
+    <div style="
+      display:flex;
+      align-items:center;
+      gap:12px;
+      background:#ffffff;
+      padding:14px 22px;
+      border-radius:12px;
+      box-shadow:0 8px 22px rgba(0,0,0,0.08);
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+    "
+    onmouseenter="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 14px 30px rgba(0,74,173,0.18)';"
+    onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 22px rgba(0,0,0,0.08)';"
+    >
+      <i class="fas fa-envelope" style="color:#004aad; font-size:20px;"></i>
+      <a href="mailto:info@flowedgesolutionsltd.com"
+         style="color:#004aad; text-decoration:none; font-weight:500;">
+        info@flowedgesolutionsltd.com
+      </a>
     </div>
-    <div class="contact-item">
-      <i class="fas fa-phone-alt contact-icon"></i>
-      <a href="tel:0753088762" style="color:#00796b; text-decoration:none; margin-left:10px;">0753088762</a>
+
+    <!-- Phone -->
+    <div style="
+      display:flex;
+      align-items:center;
+      gap:12px;
+      background:#ffffff;
+      padding:14px 22px;
+      border-radius:12px;
+      box-shadow:0 8px 22px rgba(0,0,0,0.08);
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+    "
+    onmouseenter="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 14px 30px rgba(0,74,173,0.18)';"
+    onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 22px rgba(0,0,0,0.08)';"
+    >
+      <i class="fas fa-phone-alt" style="color:#004aad; font-size:20px;"></i>
+      <a href="tel:0753088762"
+         style="color:#004aad; text-decoration:none; font-weight:500;">
+        0753 088 762
+      </a>
     </div>
+
   </div>
+</div>
+
 
   <!-- Social Media Links -->
   <div class="social-links" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; position: relative; z-index: 1;">
@@ -1204,6 +1333,5 @@ window.addEventListener('scroll', () => {
 
 </body>
 </html>
-
 
 
