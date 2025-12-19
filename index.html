@@ -988,96 +988,195 @@ section#services div[style*="border-radius"]:hover {
   </div>
 </section>
 
-<!-- ===== Industries We Serve ===== -->
+
+<!-- ===== Industries We Serve ===== --> 
 <section style="
   padding:80px 20px;
-  background:linear-gradient(135deg,#0a66ff,#003f9e);
+  background:url('bg.png') ;
   color:white;
   font-family:Arial, sans-serif;
   text-align:center;
+  overflow:hidden;
 ">
-  <h2 style="
-    font-size:38px;
-    font-weight:800;
-    margin-bottom:30px;
-    letter-spacing:0.5px;
-  ">
-    Industries We Serve
-  </h2>
+ 
+ <div style="
+  display: inline-block;
+  padding: 10px 25px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+  border-radius: 12px;
+  background: #0a66ff;
+  overflow: hidden;
+  text-align: center;
+  cursor: default;
+  animation: slideIn 1s ease forwards;
+  box-shadow: 0 0 10px #0a66ff;
+">
+  Industries We Serve
+  <span style="
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #0a66ff, 0 0 40px #00ffff, 0 0 60px #0a66ff;
+    filter: blur(8px);
+    animation: pulseGlow 2s infinite alternate;
+    pointer-events: none;
+  "></span>
+  <span style="
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(0,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+    animation: shimmer 2s infinite;
+    border-radius: 12px;
+    pointer-events: none;
+  "></span>
+</div>
 
-  <div style="
-    margin-top:40px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-    gap:25px;
-  ">
+<style>
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    <div style="
-      background:white;
-      color:#0a66ff;
-      padding:28px;
-      border-radius:14px;
-      font-weight:700;
-      transition:0.5s ease;
-      cursor:pointer;
-      box-shadow:0 10px 25px rgba(0,0,0,0.15);
-    "
-    onmouseover="this.style.transform='translateY(-10px) scale(1.07)'; this.style.boxShadow='0 20px 45px rgba(0,0,0,0.3)'"
-    onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)'"
-    >
-      Manufacturing & Processing Plants
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 10px #0a66ff, 0 0 20px #00ffff, 0 0 30px #0a66ff; }
+  50% { box-shadow: 0 0 20px #0a66ff, 0 0 40px #00ffff, 0 0 60px #0a66ff; }
+  100% { box-shadow: 0 0 10px #0a66ff, 0 0 20px #00ffff, 0 0 30px #0a66ff; }
+}
+
+div:hover {
+  box-shadow: 0 0 35px #0a66ff, 0 0 70px #00ffff, 0 0 100px #0a66ff;
+}
+</style>
+ 
+
+  <div class="industry-grid">
+
+    <div class="industry-card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1581092795367-ec64826a0b11?auto=format&fit=crop&w=800&q=80" alt="Manufacturing">
+      <div class="card-text">Manufacturing & Processing Plants</div>
     </div>
 
-    <div style="
-      background:white;
-      color:#0a66ff;
-      padding:28px;
-      border-radius:14px;
-      font-weight:700;
-      transition:0.5s ease;
-      cursor:pointer;
-      box-shadow:0 10px 25px rgba(0,0,0,0.15);
-    "
-    onmouseover="this.style.transform='translateY(-10px) scale(1.07)'; this.style.boxShadow='0 20px 45px rgba(0,0,0,0.3)'"
-    onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)'"
-    >
-      Boiler & Steam-Dependent Facilities
+    <div class="industry-card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1581092795364-b62dc9beee11?auto=format&fit=crop&w=800&q=80" alt="Boiler">
+      <div class="card-text">Boiler & Steam-Dependent Facilities</div>
     </div>
 
-    <div style="
-      background:white;
-      color:#0a66ff;
-      padding:28px;
-      border-radius:14px;
-      font-weight:700;
-      transition:0.5s ease;
-      cursor:pointer;
-      box-shadow:0 10px 25px rgba(0,0,0,0.15);
-    "
-    onmouseover="this.style.transform='translateY(-10px) scale(1.07)'; this.style.boxShadow='0 20px 45px rgba(0,0,0,0.3)'"
-    onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)'"
-    >
-      Utilities & Industrial Water Systems
+    <div class="industry-card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1596496056203-4f3b6f30bfc5?auto=format&fit=crop&w=800&q=80" alt="Utilities">
+      <div class="card-text">Utilities & Industrial Water Systems</div>
     </div>
 
-    <div style="
-      background:white;
-      color:#0a66ff;
-      padding:28px;
-      border-radius:14px;
-      font-weight:700;
-      transition:0.5s ease;
-      cursor:pointer;
-      box-shadow:0 10px 25px rgba(0,0,0,0.15);
-    "
-    onmouseover="this.style.transform='translateY(-10px) scale(1.07)'; this.style.boxShadow='0 20px 45px rgba(0,0,0,0.3)'"
-    onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)'"
-    >
-      Energy, Food, Chemical & Related Industries
+    <div class="industry-card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1581093448796-5b3e42d8f42e?auto=format&fit=crop&w=800&q=80" alt="Energy">
+      <div class="card-text">Energy, Food, Chemical & Related Industries</div>
     </div>
 
   </div>
 </section>
+
+<style>
+/* Title Animation */
+.section-title {
+  font-size:38px;
+  font-weight:800;
+  margin-bottom:30px;
+  letter-spacing:0.5px;
+  opacity:0;
+  transform:translateY(30px);
+  animation: fadeInUp 1s forwards;
+}
+
+/* Grid Setup */
+.industry-grid {
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:25px;
+}
+
+/* Card Styling */
+.industry-card {
+  background:rgba(255,255,255,0.95);
+  color:#0a66ff;
+  padding:0;
+  border-radius:14px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.6s ease, box-shadow 0.6s ease, filter 0.3s ease;
+  opacity:0;
+  transform:translateY(30px);
+  animation: fadeInUpBounce 0.8s forwards;
+  overflow:hidden;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* Card Image Styling */
+.card-img {
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-top-left-radius:14px;
+  border-top-right-radius:14px;
+  transition: transform 0.5s ease;
+}
+
+/* Card Text Styling */
+.card-text {
+  padding:20px;
+  font-size:18px;
+  text-align:center;
+}
+
+/* Hover Effects */
+.industry-card:hover {
+  transform:translateY(-10px) scale(1.08);
+  box-shadow:0 25px 50px rgba(0,0,0,0.35);
+  filter: drop-shadow(0 0 10px #0a66ff);
+}
+.industry-card:hover .card-img {
+  transform:scale(1.05);
+}
+
+/* Staggered animation delay */
+.industry-card:nth-child(1) { animation-delay:0.2s; }
+.industry-card:nth-child(2) { animation-delay:0.4s; }
+.industry-card:nth-child(3) { animation-delay:0.6s; }
+.industry-card:nth-child(4) { animation-delay:0.8s; }
+
+/* Entrance Animation */
+@keyframes fadeInUp {
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* Bounce Entrance Animation */
+@keyframes fadeInUpBounce {
+  0% { opacity:0; transform:translateY(50px); }
+  60% { opacity:1; transform:translateY(-10px); }
+  100% { opacity:1; transform:translateY(0); }
+}
+</style>
+
 
 
 
