@@ -359,7 +359,7 @@ footer a:hover{color:white;}
 
 <!-- Navbar -->
 <nav>
-  <img src="logo.png" alt="FlowEdge Logo">
+  <img src="images/logo.png" alt="FlowEdge Logo">
   <i class="fa fa-bars menu-toggle"></i>
   <ul>
     <li><a href="#home">Home</a></li>
@@ -399,7 +399,7 @@ footer a:hover{color:white;}
 
     <!-- About Image with Gradient Overlay -->
     <div style="max-width:700px; margin:0 auto; border-radius:15px; overflow:hidden; box-shadow:0 8px 30px rgba(0,0,0,0.2); transition:transform 0.3s, box-shadow 0.3s; animation:fadeIn 2s ease forwards; position:relative;">
-        <img src="https://images.unsplash.com/photo-1593642634367-d91a135587b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=800" alt="About FlowEdge" style="width:100%; height:auto; display:block;">
+        <img src="images/ind.png" alt="About FlowEdge" style="width:100%; height:auto; display:block;">
         <!-- Gradient overlay -->
         <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(to bottom, rgba(0,119,255,0.2), rgba(255,255,255,0.0)); pointer-events:none;"></div>
     </div>
@@ -450,6 +450,94 @@ section.about div:hover img {
 </style>
 
 
+<!-- About Section what we do-->
+<section class="about" id="about" style="padding:80px 20px; background:#f0f4f8; text-align:center; position:relative; overflow:hidden;">
+    <!-- Floating background shapes -->
+    <div style="position:absolute; width:180px; height:180px; background:linear-gradient(135deg,#c2e9fb,#a1c4fd); border-radius:50%; top:-40px; left:-40px; animation:float 7s ease-in-out infinite;"></div>
+    <div style="position:absolute; width:120px; height:120px; background:linear-gradient(135deg,#fdd6a8,#fbc2eb); border-radius:50%; bottom:-40px; right:-30px; animation:float 6s ease-in-out infinite reverse;"></div>
+
+    <h2 style="font-size:36px; color:#0077ff; margin-bottom:30px; position:relative; display:inline-block; animation:fadeInUp 1s ease forwards;">
+        What We Do
+    </h2>
+
+    <p style="max-width:800px; margin:0 auto 50px; font-size:18px; line-height:1.8; color:#333; animation:fadeIn 1.5s ease forwards;">
+        We specialize in the sourcing and supply of industrial mechanical systems, with a strong focus on equipment that controls, moves, and contains fluids and energy within process environments.
+
+Our work is centered on practical, field-proven solutions backed by trusted manufacturers.
+
+    <!-- About Image with Gradient Overlay -->
+    <div style="max-width:700px; margin:0 auto; border-radius:15px; overflow:hidden; box-shadow:0 8px 30px rgba(0,0,0,0.2); transition:transform 0.3s, box-shadow 0.3s; animation:fadeIn 2s ease forwards; position:relative;">
+        <img src="images/valve.png" alt="About FlowEdge" style="width:100%; height:auto; display:block;">
+        <!-- Gradient overlay -->
+        <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(to bottom, rgba(0,119,255,0.2), rgba(255,255,255,0.0)); pointer-events:none;"></div>
+    </div>
+</section>
+
+<!-- Animations -->
+<style>
+@keyframes fadeInUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Floating background animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    50% { transform: translateY(20px) translateX(20px); }
+}
+
+/* Image hover effect */
+section.about div:hover img {
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+}
+
+/* Responsive */
+@media(max-width:1024px){
+    h2{
+        font-size:32px;
+    }
+    p{
+        font-size:17px;
+    }
+}
+
+@media(max-width:768px){
+    h2{
+        font-size:28px;
+    }
+    p{
+        font-size:16px;
+    }
+}
+</style>
+
+
+
+
+<script>
+const fadeText = document.querySelector('.fade-up-text');
+const slideImage = document.querySelector('.slide-in-image');
+
+window.addEventListener('scroll', () => {
+  const triggerBottom = window.innerHeight * 0.85;
+  
+  if(fadeText.getBoundingClientRect().top < triggerBottom) {
+    fadeText.classList.add('show');
+  }
+  if(slideImage.getBoundingClientRect().top < triggerBottom) {
+    slideImage.classList.add('show');
+  }
+});
+</script>
+
+
+
 <section class="section" id="services" style="padding:80px 20px; background:#f0f4f8; position:relative; overflow:hidden; text-align:center;">
     <!-- Animated background shapes -->
     <div style="position:absolute; width:200px; height:200px; background:linear-gradient(135deg,#a8edea,#fed6e3); border-radius:50%; top:-50px; left:-50px; animation:float 6s ease-in-out infinite;"></div>
@@ -488,6 +576,196 @@ section.about div:hover img {
         </div>
     </div>
 </section>
+
+<section id="why-flowedge" style="
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f0f8ff, #e6f2ff);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  transition: background 0.5s;
+">
+
+  <!-- Gears Canvas -->
+  <canvas id="gears" style="
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  "></canvas>
+
+  <h2 style="
+    font-size: 36px;
+    font-weight: 700;
+    color: #0a66ff;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1s forwards;
+  ">
+    Why FlowEdge
+  </h2>
+
+  <div style="
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+  ">
+
+    <!-- Card 1 -->
+    <div class="flow-item" data-color="rgba(10,102,255,0.6)" style="background: linear-gradient(135deg,#0a66ff,#66b2ff); border-radius:20px; padding:30px; width:250px; box-shadow:0 10px 25px rgba(0,0,0,0.15); opacity:0; transform:translateY(50px); position:relative; overflow:hidden; color:white;">
+      <div class="shimmer" style="position:absolute; top:0; left:-75%; width:50%; height:100%; background:linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%); transform:skewX(-20deg);"></div>
+      <div class="icon" style="font-size:50px; margin-bottom:20px; position:relative; z-index:1;">
+        <svg width="50" height="50" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0a2 2 0 0 1 2 2v1h2a2 2 0 0 1 2 2v1h1a2 2 0 0 1 2 2v2h-1v2h1v2a2 2 0 0 1-2 2h-1v1a2 2 0 0 1-2 2h-2v-1H6v1H4a2 2 0 0 1-2-2v-1H1a2 2 0 0 1-2-2v-2h1v-2H-1v-2a2 2 0 0 1 2-2h1V5a2 2 0 0 1 2-2h2V2a2 2 0 0 1 2-2z"/></svg>
+      </div>
+      <h3 style="font-size:20px; font-weight:600; margin-bottom:10px; position:relative; z-index:1;">Mechanical-first approach</h3>
+      <p style="font-size:16px; position:relative; z-index:1;">We prioritize mechanical integrity in all projects ensuring reliable and precise solutions.</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="flow-item" data-color="rgba(0,200,100,0.6)" style="background: linear-gradient(135deg,#00c864,#99ffc4); border-radius:20px; padding:30px; width:250px; box-shadow:0 10px 25px rgba(0,0,0,0.15); opacity:0; transform:translateY(50px); position:relative; overflow:hidden; color:white;">
+      <div class="shimmer" style="position:absolute; top:0; left:-75%; width:50%; height:100%; background:linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%); transform:skewX(-20deg);"></div>
+      <div class="icon" style="font-size:50px; margin-bottom:20px; position:relative; z-index:1;">
+        <svg width="50" height="50" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zm0 14.93A6.93 6.93 0 1 1 14.93 8 6.938 6.938 0 0 1 8 14.93z"/></svg>
+      </div>
+      <h3 style="font-size:20px; font-weight:600; margin-bottom:10px; position:relative; z-index:1;">Strong understanding of industrial operations</h3>
+      <p style="font-size:16px; position:relative; z-index:1;">Our team has deep knowledge of industrial workflows for efficient and practical solutions.</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="flow-item" data-color="rgba(255,140,0,0.6)" style="background: linear-gradient(135deg,#ff8c00,#ffd27f); border-radius:20px; padding:30px; width:250px; box-shadow:0 10px 25px rgba(0,0,0,0.15); opacity:0; transform:translateY(50px); position:relative; overflow:hidden; color:white;">
+      <div class="shimmer" style="position:absolute; top:0; left:-75%; width:50%; height:100%; background:linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%); transform:skewX(-20deg);"></div>
+      <div class="icon" style="font-size:50px; margin-bottom:20px; position:relative; z-index:1;">
+        <svg width="50" height="50" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zm3.5 8a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/></svg>
+      </div>
+      <h3 style="font-size:20px; font-weight:600; margin-bottom:10px; position:relative; z-index:1;">Flexible and responsive support</h3>
+      <p style="font-size:16px; position:relative; z-index:1;">We respond quickly to client needs with adaptable and reliable solutions at all times.</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="flow-item" data-color="rgba(150,0,200,0.6)" style="background: linear-gradient(135deg,#9600c8,#d699ff); border-radius:20px; padding:30px; width:250px; box-shadow:0 10px 25px rgba(0,0,0,0.15); opacity:0; transform:translateY(50px); position:relative; overflow:hidden; color:white;">
+      <div class="shimmer" style="position:absolute; top:0; left:-75%; width:50%; height:100%; background:linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%); transform:skewX(-20deg);"></div>
+      <div class="icon" style="font-size:50px; margin-bottom:20px; position:relative; z-index:1;">
+        <svg width="50" height="50" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0a8 8 0 0 0-5.291 13.708l5.292-5.292 5.292 5.292A8 8 0 0 0 8 0z"/></svg>
+      </div>
+      <h3 style="font-size:20px; font-weight:600; margin-bottom:10px; position:relative; z-index:1;">Commitment to dependable equipment and service</h3>
+      <p style="font-size:16px; position:relative; z-index:1;">We provide high-quality equipment and services that our clients can rely on consistently.</p>
+    </div>
+
+  </div>
+
+  <style>
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    .flow-item { transition: transform 0.3s, box-shadow 0.3s; cursor:pointer; }
+    .flow-item:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.25); }
+    .shimmer { animation: shimmer 2s infinite; }
+    @keyframes shimmer { 0% { left:-75%; } 100% { left:125%; } }
+  </style>
+</section>
+
+<script>
+const items = document.querySelectorAll('.flow-item');
+window.addEventListener('scroll', () => {
+  const triggerBottom = window.innerHeight * 0.85;
+  items.forEach((item,index)=>{
+    const itemTop = item.getBoundingClientRect().top;
+    if(itemTop<triggerBottom){
+      setTimeout(()=>{item.style.opacity='1'; item.style.transform='translateY(0)';}, index*200);
+    }
+  });
+});
+
+// Gears
+const canvas = document.getElementById('gears');
+const ctx = canvas.getContext('2d');
+let gearsArray=[], mouse={x:0,y:0}, hoverColor='rgba(10,102,255,0.3)', pulse=false, push=false;
+
+function createGears(){
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+  gearsArray=[];
+  for(let i=0;i<50;i++){
+    gearsArray.push({
+      x:Math.random()*canvas.width,
+      y:Math.random()*canvas.height,
+      radius:Math.random()*15+10,
+      angle:Math.random()*Math.PI*2,
+      speed:(Math.random()*0.02+0.005)*(Math.random()<0.5?-1:1),
+      offsetX:0,
+      offsetY:0,
+      baseRadius: Math.random()*15+10
+    });
+  }
+}
+
+function drawGear(g){
+  let r = g.radius;
+  if(pulse) r *= 1 + 0.05*Math.sin(Date.now()/150);
+  ctx.save();
+  ctx.translate(g.x+g.offsetX, g.y+g.offsetY);
+  ctx.rotate(g.angle);
+  ctx.beginPath();
+  for(let i=0;i<8;i++){ ctx.lineTo(r*Math.cos(i*Math.PI/4), r*Math.sin(i*Math.PI/4)); }
+  ctx.closePath();
+  ctx.strokeStyle = hoverColor;
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+  ctx.restore();
+}
+
+function animateGears(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  gearsArray.forEach(g=>{
+    g.angle+=g.speed;
+    g.offsetX += (mouse.x - g.x - g.offsetX)*0.002;
+    g.offsetY += (mouse.y - g.y - g.offsetY)*0.002;
+
+    if(push){
+      // push gears slightly away from hovered card
+      const dx = mouse.x - g.x;
+      const dy = mouse.y - g.y;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if(dist<150){
+        g.offsetX -= dx*0.005;
+        g.offsetY -= dy*0.005;
+      }
+    }
+
+    drawGear(g);
+  });
+  requestAnimationFrame(animateGears);
+}
+
+window.addEventListener('resize',createGears);
+window.addEventListener('mousemove',e=>{mouse.x=e.clientX; mouse.y=e.clientY;});
+
+items.forEach(item=>{
+  item.addEventListener('mouseenter',()=>{
+    hoverColor=item.dataset.color;
+    pulse=true;
+    push=true;
+  });
+  item.addEventListener('mouseleave',()=>{
+    hoverColor='rgba(10,102,255,0.3)';
+    pulse=false;
+    push=false;
+  });
+});
+
+createGears();
+animateGears();
+</script>
+
+
 
 <!-- Animations -->
 <style>
@@ -926,6 +1204,5 @@ window.addEventListener('scroll', () => {
 
 </body>
 </html>
-
 
 
