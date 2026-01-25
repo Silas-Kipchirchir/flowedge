@@ -1539,6 +1539,146 @@ div:hover {
   </div>
 </section>
 
+
+<!-- ===== Download Documents Section ===== -->
+<section id="downloads" style="
+  position:relative;
+  padding:100px 20px;
+  background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+             url('https://images.unsplash.com/photo-1581092334310-d6f2f3796c2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=1200') center/cover no-repeat;
+  border-radius:20px;
+  max-width:1200px;
+  margin:50px auto;
+  overflow:hidden;
+  color:white;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  transition:0.6s;
+">
+  <h2 style="
+      font-size:36px;
+      color:#0a66ff;
+      margin-bottom:40px;
+      opacity:0;
+      transform:translateY(30px);
+      transition:0.6s;
+  " class="download-title">
+      Download Our Documents
+  </h2>
+  <p style="
+      font-size:18px;
+      line-height:1.7;
+      max-width:800px;
+      margin:0 auto 50px;
+      opacity:0;
+      transform:translateY(30px);
+      transition:0.6s;
+  " class="download-desc">
+      Access all our brochures, manuals, and guides directly from here. Click on the buttons below to download.
+  </p>
+
+  <!-- Buttons with Counters -->
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; opacity:0; transform:translateY(30px); transition:0.6s;" class="download-buttons">
+
+      <div style="text-align:center;">
+        <div class="counter" data-count="1250" style="font-size:24px; font-weight:bold; color:#0a66ff; margin-bottom:10px;">0</div>
+        <a href="documents/brochure.pdf" download style="
+            padding:15px 35px;
+            background:linear-gradient(135deg,#0a66ff,#66b2ff);
+            color:white;
+            font-weight:bold;
+            border-radius:50px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.3);
+            transition:0.4s;
+            display:inline-block;
+        " onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.5)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">
+            Download Brochure
+        </a>
+      </div>
+
+      <div style="text-align:center;">
+        <div class="counter" data-count="980" style="font-size:24px; font-weight:bold; color:#00c864; margin-bottom:10px;">0</div>
+        <a href="documents/manual.pdf" download style="
+            padding:15px 35px;
+            background:linear-gradient(135deg,#00c864,#99ffc4);
+            color:white;
+            font-weight:bold;
+            border-radius:50px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.3);
+            transition:0.4s;
+            display:inline-block;
+        " onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.5)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">
+            Download Manual
+        </a>
+      </div>
+
+      <div style="text-align:center;">
+        <div class="counter" data-count="1575" style="font-size:24px; font-weight:bold; color:#ff8c00; margin-bottom:10px;">0</div>
+        <a href="documents/guide.pdf" download style="
+            padding:15px 35px;
+            background:linear-gradient(135deg,#ff8c00,#ffd27f);
+            color:white;
+            font-weight:bold;
+            border-radius:50px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.3);
+            transition:0.4s;
+            display:inline-block;
+        " onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.5)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">
+            Download Guide
+        </a>
+      </div>
+
+  </div>
+</section>
+
+<!-- ===== Internal Animations Script ===== -->
+<script>
+const downloadSection = document.getElementById('downloads');
+const title = downloadSection.querySelector('.download-title');
+const desc = downloadSection.querySelector('.download-desc');
+const buttons = downloadSection.querySelector('.download-buttons');
+const counters = downloadSection.querySelectorAll('.counter');
+
+let counted = false;
+
+window.addEventListener('scroll', () => {
+    const triggerBottom = window.innerHeight * 0.85;
+    const sectionTop = downloadSection.getBoundingClientRect().top;
+
+    if(sectionTop < triggerBottom){
+        title.style.opacity = '1';
+        title.style.transform = 'translateY(0)';
+        desc.style.opacity = '1';
+        desc.style.transform = 'translateY(0)';
+        buttons.style.opacity = '1';
+        buttons.style.transform = 'translateY(0)';
+
+        // Animate counters once
+        if(!counted){
+            counters.forEach(counter => {
+                let target = +counter.getAttribute('data-count');
+                let count = 0;
+                const increment = Math.ceil(target / 100); // smooth increment
+                const updateCounter = setInterval(() => {
+                    count += increment;
+                    if(count > target) count = target;
+                    counter.textContent = count.toLocaleString();
+                    if(count === target) clearInterval(updateCounter);
+                }, 20);
+            });
+            counted = true;
+        }
+    }
+});
+</script>
+
+
+
+
+
+
+  
+
 <!-- Styles -->
 <style>
   /* Floating shapes */
@@ -1713,6 +1853,7 @@ window.addEventListener('scroll', () => {
 
 </body>
 </html>
+
 
 
 
